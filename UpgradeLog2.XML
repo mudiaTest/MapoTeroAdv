@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MapoTero_v3">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\MapoTero_v3.sln">
+</Property><Property Name="User Options File" Value="C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\MapoTero_v3.suo">
+</Property><Property Name="Date" Value="28 lutego 2017">
+</Property><Property Name="Time" Value="09:21">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MapoTero_v3.sln" Description="File successfully backed up as C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\Backup1\MapoTero_v3.sln">
+</Event><Event ErrorLevel="0" Project="" Source="MapoTero_v3.suo" Description="File successfully backed up as C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\Backup1\MapoTero_v3.suo">
+</Event><Event ErrorLevel="0" Project="" Source="MapoTero_v3.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MapoTero_v3.sln" Description="Converted">
+</Event></UpgradeLog>
