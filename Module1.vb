@@ -58,6 +58,7 @@ Module Module1
     Public lpTextBox2Val As Integer
     Public lpTextBox3Val As Integer
     Public lpTextBox4Val As Integer
+    Public pathSegmentu As String
 
     Public myPath As String
 

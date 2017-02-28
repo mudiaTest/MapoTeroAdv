@@ -177,29 +177,37 @@ Public Class Form1
         WriteLine(1, Val(TextBox9.Text))        'długość boku segmentu
         FileClose(1)
 
-        lpTextBox1Val = Val(TextBox1)
-        lpTextBox2Val = Val(TextBox2)
-        lpTextBox3Val = Val(TextBox3)
-        lpTextBox4Val = Val(TextBox4)
-        ileX = Math.Ceiling(lpTextBox1Val - lpTextBox3Val) / Val(txtPodzX))
-        ileY = Math.Ceiling(lpTextBox4Val - lpTextBox2Val) / Val(txtPodzY))
+        lpTextBox1Val = Val(TextBox1.Text)
+        lpTextBox2Val = Val(TextBox2.Text)
+        lpTextBox3Val = Val(TextBox3.Text)
+        lpTextBox4Val = Val(TextBox4.Text)
+        ileX = Math.Ceiling((lpTextBox3Val - lpTextBox1Val) / Val(txtPodzX.Text))
+        ileY = Math.Ceiling((lpTextBox4Val - lpTextBox2Val) / Val(txtPodzY.Text))
 
         For i = 0 To ileX - 1
             For j = 0 To ileY - 1
-                TextBox1.Text = lpTextBox1Val + i * Val(txtPodzX)
-                TextBox3.Text = lpTextBox3Val + (i + 1) * Val(txtPodzX)
+                TextBox3.Text = lpTextBox3Val - i * Val(txtPodzX.Text)
+                TextBox1.Text = TextBox3.Text - Val(txtPodzX.Text)
 
-                TextBox2.Text = lpTextBox2Val + j * Val(txtPodzY)
-                TextBox4.Text = lpTextBox4Val + (j + 1) * Val(txtPodzY)
+                TextBox4.Text = lpTextBox4Val - j * Val(txtPodzY.Text)
+                TextBox2.Text = TextBox4.Text - Val(txtPodzY.Text)
 
+                myPath = My.Application.Info.DirectoryPath.ToString()
+                pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
+
+                If (Not System.IO.Directory.Exists(pathSegmentu)) Then
+                    System.IO.Directory.CreateDirectory(pathSegmentu)
+                End If
+
+                Module1.folderSegmentow = pathSegmentu
                 Module1.proceduraGlowna()
             Next
         Next
 
-        TextBox1.Text = lpTextBox1Val
-        TextBox2.Text = lpTextBox2Val
-        TextBox3.Text = lpTextBox3Val
-        TextBox4.Text = lpTextBox4Val
+        'TextBox1.Text = lpTextBox1Val
+        'TextBox2.Text = lpTextBox2Val
+        'TextBox3.Text = lpTextBox3Val
+        'TextBox4.Text = lpTextBox4Val
 errorhandler:
     End Sub
 
