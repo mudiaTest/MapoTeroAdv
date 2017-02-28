@@ -44,7 +44,6 @@ Module Module1
     Public nrKwadratu As String                 'numer segmentu
     Public folderSegmentow As String
     Public pobierz As Boolean
-    Public myPath As String                     'ścieżka tej aplikacji
     Public dstDir As String                     'ścieżka tej aplikacji
     Public folderWarstwa1 As String           'folder warstwy dolnej
     Public folderWarstwa2 As String          'folder warstwy górnej
@@ -53,7 +52,14 @@ Module Module1
     Public przerwaMiedzyProbami As Integer = 5 'odstęp między kolejnymi próbami w sekundach
     Public numeracja As String = "NrWiersza_NrKolumny"                    'sposób numerowania segmentów
 
+    Public ileX As Integer
+    Public ileY As Integer
+    Public lpTextBox1Val As Integer
+    Public lpTextBox2Val As Integer
+    Public lpTextBox3Val As Integer
+    Public lpTextBox4Val As Integer
 
+    Public myPath As String
 
 
     Public format As String                  'jpeg / png / svg+xml

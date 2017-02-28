@@ -149,13 +149,13 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.txtPodzX = New System.Windows.Forms.TextBox()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.txtPodzY = New System.Windows.Forms.TextBox()
-        Me.cbPodziel = New System.Windows.Forms.CheckBox()
-        Me.cbKLM = New System.Windows.Forms.CheckBox()
         Me.cbKMZ = New System.Windows.Forms.CheckBox()
+        Me.cbKLM = New System.Windows.Forms.CheckBox()
+        Me.cbPodziel = New System.Windows.Forms.CheckBox()
+        Me.txtPodzY = New System.Windows.Forms.TextBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.txtPodzX = New System.Windows.Forms.TextBox()
+        Me.Label43 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -1275,53 +1275,17 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Podział KML"
         '
-        'Label43
+        'cbKMZ
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(14, 85)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(51, 13)
-        Me.Label43.TabIndex = 215
-        Me.Label43.Text = "Podział x"
-        '
-        'txtPodzX
-        '
-        Me.txtPodzX.Location = New System.Drawing.Point(69, 82)
-        Me.txtPodzX.Name = "txtPodzX"
-        Me.txtPodzX.Size = New System.Drawing.Size(55, 20)
-        Me.txtPodzX.TabIndex = 217
-        Me.txtPodzX.Text = "10000"
-        Me.txtPodzX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(17, 115)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(51, 13)
-        Me.Label44.TabIndex = 218
-        Me.Label44.Text = "Podział y"
-        '
-        'txtPodzY
-        '
-        Me.txtPodzY.Location = New System.Drawing.Point(69, 110)
-        Me.txtPodzY.Name = "txtPodzY"
-        Me.txtPodzY.Size = New System.Drawing.Size(55, 20)
-        Me.txtPodzY.TabIndex = 219
-        Me.txtPodzY.Text = "10000"
-        Me.txtPodzY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'cbPodziel
-        '
-        Me.cbPodziel.AutoSize = True
-        Me.cbPodziel.Checked = True
-        Me.cbPodziel.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbPodziel.Location = New System.Drawing.Point(8, 17)
-        Me.cbPodziel.Name = "cbPodziel"
-        Me.cbPodziel.Size = New System.Drawing.Size(60, 17)
-        Me.cbPodziel.TabIndex = 220
-        Me.cbPodziel.Text = "Podziel"
-        Me.cbPodziel.UseVisualStyleBackColor = True
+        Me.cbKMZ.AutoSize = True
+        Me.cbKMZ.Checked = True
+        Me.cbKMZ.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbKMZ.Location = New System.Drawing.Point(38, 62)
+        Me.cbKMZ.Name = "cbKMZ"
+        Me.cbKMZ.Size = New System.Drawing.Size(80, 17)
+        Me.cbKMZ.TabIndex = 222
+        Me.cbKMZ.Text = "Batch KMZ"
+        Me.cbKMZ.UseVisualStyleBackColor = True
         '
         'cbKLM
         '
@@ -1335,17 +1299,53 @@ Partial Class Form1
         Me.cbKLM.Text = "Batch KLM"
         Me.cbKLM.UseVisualStyleBackColor = True
         '
-        'cbKMZ
+        'cbPodziel
         '
-        Me.cbKMZ.AutoSize = True
-        Me.cbKMZ.Checked = True
-        Me.cbKMZ.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbKMZ.Location = New System.Drawing.Point(38, 62)
-        Me.cbKMZ.Name = "cbKMZ"
-        Me.cbKMZ.Size = New System.Drawing.Size(80, 17)
-        Me.cbKMZ.TabIndex = 222
-        Me.cbKMZ.Text = "Batch KMZ"
-        Me.cbKMZ.UseVisualStyleBackColor = True
+        Me.cbPodziel.AutoSize = True
+        Me.cbPodziel.Checked = True
+        Me.cbPodziel.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbPodziel.Location = New System.Drawing.Point(8, 17)
+        Me.cbPodziel.Name = "cbPodziel"
+        Me.cbPodziel.Size = New System.Drawing.Size(60, 17)
+        Me.cbPodziel.TabIndex = 220
+        Me.cbPodziel.Text = "Podziel"
+        Me.cbPodziel.UseVisualStyleBackColor = True
+        '
+        'txtPodzY
+        '
+        Me.txtPodzY.Location = New System.Drawing.Point(69, 110)
+        Me.txtPodzY.Name = "txtPodzY"
+        Me.txtPodzY.Size = New System.Drawing.Size(55, 20)
+        Me.txtPodzY.TabIndex = 219
+        Me.txtPodzY.Text = "10000"
+        Me.txtPodzY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(17, 115)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(51, 13)
+        Me.Label44.TabIndex = 218
+        Me.Label44.Text = "Podział y"
+        '
+        'txtPodzX
+        '
+        Me.txtPodzX.Location = New System.Drawing.Point(69, 82)
+        Me.txtPodzX.Name = "txtPodzX"
+        Me.txtPodzX.Size = New System.Drawing.Size(55, 20)
+        Me.txtPodzX.TabIndex = 217
+        Me.txtPodzX.Text = "10000"
+        Me.txtPodzX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(17, 85)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(51, 13)
+        Me.Label43.TabIndex = 215
+        Me.Label43.Text = "Podział x"
         '
         'Form1
         '
