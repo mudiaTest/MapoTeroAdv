@@ -179,6 +179,7 @@ Public Class Form1
 
 
         If cbPodziel.Checked Then
+            'pomieszanie wartości wynika z dziwnego korzystania i opisu pól, które jest niezgodne z kolejnością pól w pliku cfg
             lpTextBox2Val = Val(TextBox1.Text)
             lpTextBox1Val = Val(TextBox2.Text)
             lpTextBox4Val = Val(TextBox3.Text)
@@ -192,6 +193,7 @@ Public Class Form1
             Next
 
             Dim nazwa_sklejka As String = ""
+            Dim tmp As Integer = 0
             For i = 0 To ileX - 1
                 For j = 0 To ileY - 1
                     TextBox3.Text = lpTextBox3Val - i * Val(txtPodzX.Text)
@@ -207,12 +209,27 @@ Public Class Form1
                     End If
 
                     Module1.folderSegmentow = pathSegmentu
+                    'Module1.utworzPlikConf()
                     Module1.proceduraGlowna(((i + 1) * (j + 1)).ToString() & " / " & (ileX * ileY).ToString())
 
-                    nazwa_sklejka = "_scalone_segmenty_" & TextBox11.Text & "x" & TextBox12.Text
                     If cbKMZ.Checked Then
+                        nazwa_sklejka = "_scalone_segmenty_" & TextBox11.Text & "x" & TextBox12.Text
                         Form3.WykonajScalanie(myPath, TextBox11.Text, TextBox12.Text, TextBox9.Text, 2, 75, pathSegmentu, "\", nazwa_sklejka, "jpg", pathSegmentu)
                     End If
+
+                    'tmp = TextBox1.Text
+                    'TextBox1.Text = TextBox2.Text
+                    'TextBox2.Text = tmp
+                    'tmp = TextBox3.Text
+                    'TextBox3.Text = TextBox4.Text
+                    'TextBox4.Text = tmp
+                    'Module1.utworzPlikConf()
+                    'tmp = TextBox1.Text
+                    'TextBox1.Text = TextBox2.Text
+                    'TextBox2.Text = tmp
+                    'tmp = TextBox3.Text
+                    'TextBox3.Text = TextBox4.Text
+                    'TextBox4.Text = tmp
                 Next
             Next
             TextBox1.Text = lpTextBox2Val
@@ -220,8 +237,7 @@ Public Class Form1
             TextBox3.Text = lpTextBox4Val
             TextBox4.Text = lpTextBox3Val
         Else
-            pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
-            Module1.folderSegmentow = pathSegmentu
+            'Module1.folderSegmentow = pathSegmentu
             Module1.proceduraGlowna("")
         End If
         Module1.pobierz = False
@@ -840,15 +856,6 @@ errorhandler:
 
     Private Sub SetCbKMZEnDis()
         cbKMZ.Enabled = cbPodziel.Checked And cbPodziel.Enabled
-    End Sub
-
-    Private Sub SetCbKLMEnDis()
-    End Sub
-
-    Private Sub cbKMZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    End Sub
-
-    Private Sub cbKLM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 
     Private Sub cbPodziel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbPodziel.Click
