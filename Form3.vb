@@ -129,32 +129,26 @@ errorhandler:
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+    Public Sub WykonajScalanie(ByVal amyPath As String, ByVal atb8 As String, ByVal atb9 As String, ByVal atb6 As String, ByVal astylNumeracji As String, ByVal atb1 As Integer, ByVal afolderscalania As String, ByVal atb11 As String, ByVal anazwasklejka As String, ByVal acb1 As String, ByVal afolderSegmentow As String)
         'Procedura skleja kafle w mapę
         'Wywolanie: ..\NoToCONS.exe [Npoziom] [Npion] [Px] [TypNazwy] [Qjpg] [Path] [Prefix] [NazwaMapy] [Rozszerzenie]
-
-        'Dim sklejka As String
-        Dim nazwa_sklejka As String = ""
-
-
 
         If File.Exists(folderScalania & "\error.txt") = True Then
             RichTextBox1.ForeColor = System.Drawing.Color.Red
             RichTextBox1.Text = "W katalogu segmentów wykryto obecność pliku error.txt co świadczy o niekompletnym zestawie segmentów. Uzupełnij je i usuń plik error.txt"
         Else
-            nazwa_sklejka = "_scalone_segmenty_" & TextBox8.Text & "x" & TextBox9.Text
-
             Dim procID As Integer
-            procID = Shell(myPath & "\skrypty\NoToCONS.exe" & " " & TextBox8.Text & " " & TextBox9.Text & " " & TextBox6.Text & " " & styl_numeracji & " " & TrackBar1.Value & " " & Chr(34) & folderScalania & Chr(34) & " " & TextBox11.Text & " " & nazwa_sklejka & " " & ComboBox1.Text, AppWinStyle.NormalFocus)
+            procID = Shell(amyPath & "\skrypty\NoToCONS.exe" & " " & atb8 & " " & atb9 & " " & atb6 & " " & astylNumeracji & " " & atb1 & " " & Chr(34) & afolderscalania & Chr(34) & " " & atb11 & " " & anazwasklejka & " " & acb1, AppWinStyle.NormalFocus)
 
 
             'sklejka = Shell(myPath & "\skrypty\NoToCONS.exe" & " " & TextBox8.Text & " " & TextBox9.Text & " " & TextBox6.Text & " " & styl_numeracji & " " & TrackBar1.Value & " " & Chr(34) & folderScalania & Chr(34) & " " & TextBox11.Text & " " & nazwa_sklejka & " " & ComboBox1.Text, AppWinStyle.NormalFocus)
             'Sleep(1000 * 1)
             'If File.Exists(folderScalania & nazwa_sklejka & "." & ComboBox1.Text) = True Then
             If procID <> 0 Then
+                Module1.folderSegmentow = afolderSegmentow
+
                 Form1.RichTextBox1.ForeColor = System.Drawing.Color.Green
-                Form1.RichTextBox1.Text = "Segmenty zostały prawidłowo stalone i zapisane do pliku o nazwie" & " " & nazwa_sklejka
+                Form1.RichTextBox1.Text = "Segmenty zostały prawidłowo stalone i zapisane do pliku o nazwie" & " " & anazwasklejka
                 If Module1.georef_scalanie_qgis = True Then Module1.plikGeoreferencyjny_jpgw()
                 If Module1.georef_scalanie_kml = True Then Module1.plikGeoreferencyjny_kml()
                 If Module1.georef_scalanie_map = True Then Module1.plikGeoreferencyjny_map()
@@ -165,10 +159,13 @@ errorhandler:
                 RichTextBox1.Text = "Błąd. Segmenty nie zostały poprawnie scalone. Prawdopodobnie przygotowane wcześniej segmenty obszaru nie są kompletne, bądź po ich skompletowaniu nie został usunięty plik errot.txt"
             End If
         End If
+    End Sub
 
-
-
-
+    Private Sub Button4_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button4.Click
+        'Dim sklejka As String
+        Dim nazwa_sklejka As String = ""
+        nazwa_sklejka = "_scalone_segmenty_" & TextBox8.Text & "x" & TextBox9.Text
+        WykonajScalanie(myPath, TextBox8.Text, TextBox9.Text, TextBox6.Text, styl_numeracji, TrackBar1.Value, folderScalania, TextBox11.Text, nazwa_sklejka, ComboBox1.Text, Module1.folderSegmentow)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged

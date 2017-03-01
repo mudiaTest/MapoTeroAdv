@@ -1,9 +1,9 @@
 folder segmentow
-C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\bin\Debug\download\0_0\
+C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\bin\Debug\download\2_2\
 chkgmi
 False
 chkmap
-False
+True
 chkwldpoints
 False
 chkjpgw
@@ -27,8 +27,8 @@ iloscProbPobrania
 przerwaMiedzyProbami
  5 
 x_start
-54.3792
+54.3731
 y_start
-18.6646
+18.724
 zoom_start
 10

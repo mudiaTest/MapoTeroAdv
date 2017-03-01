@@ -112,7 +112,7 @@ Module Module1
 
 
 
-    Public Sub proceduraGlowna()
+    Public Sub proceduraGlowna(ByVal stOpisPart As String)
 
         Dim width As Long             'rozmiary mapy w pixelach
         Dim height As Long
@@ -402,8 +402,8 @@ pobieranieJeszczeRaz:
         Form1.ListBox1.Enabled = True
 
 
-        Form1.RichTextBox1.ForeColor = System.Drawing.Color.Green
-        Form1.RichTextBox1.Text = "Zakończono pobieranie. Mapa znajduje się w katalogu /download"
+        Form1.RichTextBox1.ForeColor = System.Drawing.Color.Blue
+        Form1.RichTextBox1.Text = "Zakończono pobieranie części " & stOpisPart & "."
 
 errorhandler:
 
@@ -424,7 +424,7 @@ errorhandler:
         'kasowanie zmiennych
 
         nrKwadratu = 0
-        pobierz = False
+        'pobierz = False
 
         For i = 0 To nrWarstwy - 1
 

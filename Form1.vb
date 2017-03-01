@@ -177,22 +177,27 @@ Public Class Form1
         WriteLine(1, Val(TextBox9.Text))        'długość boku segmentu
         FileClose(1)
 
-        lpTextBox1Val = Val(TextBox1.Text)
-        lpTextBox2Val = Val(TextBox2.Text)
-        lpTextBox3Val = Val(TextBox3.Text)
-        lpTextBox4Val = Val(TextBox4.Text)
+        lpTextBox2Val = Val(TextBox1.Text)
+        lpTextBox1Val = Val(TextBox2.Text)
+        lpTextBox4Val = Val(TextBox3.Text)
+        lpTextBox3Val = Val(TextBox4.Text)
         ileX = Math.Ceiling((lpTextBox3Val - lpTextBox1Val) / Val(txtPodzX.Text))
         ileY = Math.Ceiling((lpTextBox4Val - lpTextBox2Val) / Val(txtPodzY.Text))
 
+        myPath = My.Application.Info.DirectoryPath.ToString()
+        For Each path As String In System.IO.Directory.GetDirectories(myPath & "\download\")
+            System.IO.Directory.Delete(path, True)
+        Next
+
+        Dim nazwa_sklejka As String = ""
         For i = 0 To ileX - 1
             For j = 0 To ileY - 1
                 TextBox3.Text = lpTextBox3Val - i * Val(txtPodzX.Text)
                 TextBox1.Text = TextBox3.Text - Val(txtPodzX.Text)
 
-                TextBox4.Text = lpTextBox4Val - j * Val(txtPodzY.Text)
-                TextBox2.Text = TextBox4.Text - Val(txtPodzY.Text)
+                TextBox2.Text = lpTextBox2Val + j * Val(txtPodzY.Text)
+                TextBox4.Text = TextBox2.Text + Val(txtPodzY.Text)
 
-                myPath = My.Application.Info.DirectoryPath.ToString()
                 pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
 
                 If (Not System.IO.Directory.Exists(pathSegmentu)) Then
@@ -200,14 +205,20 @@ Public Class Form1
                 End If
 
                 Module1.folderSegmentow = pathSegmentu
-                Module1.proceduraGlowna()
+                Module1.proceduraGlowna(((i + 1) * (j + 1)).ToString() & " / " & (ileX * ileY).ToString())
+
+                nazwa_sklejka = "_scalone_segmenty_" & TextBox11.Text & "x" & TextBox12.Text
+                Form3.WykonajScalanie(myPath, TextBox11.Text, TextBox12.Text, TextBox9.Text, 2, 75, pathSegmentu, "\", nazwa_sklejka, "jpg", pathSegmentu)
             Next
         Next
+        Module1.pobierz = False
+        RichTextBox1.ForeColor = System.Drawing.Color.Green
+        RichTextBox1.Text = "Zakończono pobieranie. Mapa znajduje się w katalogu /download"
 
-        'TextBox1.Text = lpTextBox1Val
-        'TextBox2.Text = lpTextBox2Val
-        'TextBox3.Text = lpTextBox3Val
-        'TextBox4.Text = lpTextBox4Val
+        TextBox1.Text = lpTextBox2Val
+        TextBox2.Text = lpTextBox1Val
+        TextBox3.Text = lpTextBox4Val
+        TextBox4.Text = lpTextBox3Val
 errorhandler:
     End Sub
 
