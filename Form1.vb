@@ -177,48 +177,57 @@ Public Class Form1
         WriteLine(1, Val(TextBox9.Text))        'długość boku segmentu
         FileClose(1)
 
-        lpTextBox2Val = Val(TextBox1.Text)
-        lpTextBox1Val = Val(TextBox2.Text)
-        lpTextBox4Val = Val(TextBox3.Text)
-        lpTextBox3Val = Val(TextBox4.Text)
-        ileX = Math.Ceiling((lpTextBox3Val - lpTextBox1Val) / Val(txtPodzX.Text))
-        ileY = Math.Ceiling((lpTextBox4Val - lpTextBox2Val) / Val(txtPodzY.Text))
 
-        myPath = My.Application.Info.DirectoryPath.ToString()
-        For Each path As String In System.IO.Directory.GetDirectories(myPath & "\download\")
-            System.IO.Directory.Delete(path, True)
-        Next
+        If cbPodziel.Checked Then
+            lpTextBox2Val = Val(TextBox1.Text)
+            lpTextBox1Val = Val(TextBox2.Text)
+            lpTextBox4Val = Val(TextBox3.Text)
+            lpTextBox3Val = Val(TextBox4.Text)
+            ileX = Math.Ceiling((lpTextBox3Val - lpTextBox1Val) / Val(txtPodzX.Text))
+            ileY = Math.Ceiling((lpTextBox4Val - lpTextBox2Val) / Val(txtPodzY.Text))
 
-        Dim nazwa_sklejka As String = ""
-        For i = 0 To ileX - 1
-            For j = 0 To ileY - 1
-                TextBox3.Text = lpTextBox3Val - i * Val(txtPodzX.Text)
-                TextBox1.Text = TextBox3.Text - Val(txtPodzX.Text)
-
-                TextBox2.Text = lpTextBox2Val + j * Val(txtPodzY.Text)
-                TextBox4.Text = TextBox2.Text + Val(txtPodzY.Text)
-
-                pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
-
-                If (Not System.IO.Directory.Exists(pathSegmentu)) Then
-                    System.IO.Directory.CreateDirectory(pathSegmentu)
-                End If
-
-                Module1.folderSegmentow = pathSegmentu
-                Module1.proceduraGlowna(((i + 1) * (j + 1)).ToString() & " / " & (ileX * ileY).ToString())
-
-                nazwa_sklejka = "_scalone_segmenty_" & TextBox11.Text & "x" & TextBox12.Text
-                Form3.WykonajScalanie(myPath, TextBox11.Text, TextBox12.Text, TextBox9.Text, 2, 75, pathSegmentu, "\", nazwa_sklejka, "jpg", pathSegmentu)
+            myPath = My.Application.Info.DirectoryPath.ToString()
+            For Each path As String In System.IO.Directory.GetDirectories(myPath & "\download\")
+                System.IO.Directory.Delete(path, True)
             Next
-        Next
+
+            Dim nazwa_sklejka As String = ""
+            For i = 0 To ileX - 1
+                For j = 0 To ileY - 1
+                    TextBox3.Text = lpTextBox3Val - i * Val(txtPodzX.Text)
+                    TextBox1.Text = TextBox3.Text - Val(txtPodzX.Text)
+
+                    TextBox2.Text = lpTextBox2Val + j * Val(txtPodzY.Text)
+                    TextBox4.Text = TextBox2.Text + Val(txtPodzY.Text)
+
+                    pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
+
+                    If (Not System.IO.Directory.Exists(pathSegmentu)) Then
+                        System.IO.Directory.CreateDirectory(pathSegmentu)
+                    End If
+
+                    Module1.folderSegmentow = pathSegmentu
+                    Module1.proceduraGlowna(((i + 1) * (j + 1)).ToString() & " / " & (ileX * ileY).ToString())
+
+                    nazwa_sklejka = "_scalone_segmenty_" & TextBox11.Text & "x" & TextBox12.Text
+                    If cbKMZ.Checked Then
+                        Form3.WykonajScalanie(myPath, TextBox11.Text, TextBox12.Text, TextBox9.Text, 2, 75, pathSegmentu, "\", nazwa_sklejka, "jpg", pathSegmentu)
+                    End If
+                Next
+            Next
+            TextBox1.Text = lpTextBox2Val
+            TextBox2.Text = lpTextBox1Val
+            TextBox3.Text = lpTextBox4Val
+            TextBox4.Text = lpTextBox3Val
+        Else
+            pathSegmentu = myPath & "\download\" & i.ToString() & "_" & j.ToString() & "\"
+            Module1.folderSegmentow = pathSegmentu
+            Module1.proceduraGlowna("")
+        End If
         Module1.pobierz = False
         RichTextBox1.ForeColor = System.Drawing.Color.Green
         RichTextBox1.Text = "Zakończono pobieranie. Mapa znajduje się w katalogu /download"
 
-        TextBox1.Text = lpTextBox2Val
-        TextBox2.Text = lpTextBox1Val
-        TextBox3.Text = lpTextBox4Val
-        TextBox4.Text = lpTextBox3Val
 errorhandler:
     End Sub
 
@@ -825,30 +834,26 @@ errorhandler:
     End Sub
 
     Private Sub SetTxtPodzEnDis()
-        txtPodzX.Enabled = cbKMZ.Checked And cbKMZ.Enabled
-        txtPodzY.Enabled = cbKMZ.Checked And cbKMZ.Enabled
+        txtPodzX.Enabled = cbPodziel.Checked And cbPodziel.Enabled
+        txtPodzY.Enabled = cbPodziel.Checked And cbPodziel.Enabled
     End Sub
 
     Private Sub SetCbKMZEnDis()
-        cbKMZ.Enabled = cbKLM.Checked And cbKLM.Enabled
-        SetTxtPodzEnDis()
+        cbKMZ.Enabled = cbPodziel.Checked And cbPodziel.Enabled
     End Sub
 
     Private Sub SetCbKLMEnDis()
-        cbKLM.Enabled = cbPodziel.Checked
-        SetCbKMZEnDis()
     End Sub
 
-    Private Sub cbKMZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbKMZ.Click
-        SetTxtPodzEnDis()
+    Private Sub cbKMZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 
-    Private Sub cbKLM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbKLM.Click
-        SetCbKMZEnDis()
+    Private Sub cbKLM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 
     Private Sub cbPodziel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbPodziel.Click
-        SetCbKLMEnDis()
+        SetCbKMZEnDis()
+        SetTxtPodzEnDis()
     End Sub
 End Class
 

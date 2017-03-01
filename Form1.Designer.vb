@@ -150,7 +150,6 @@ Partial Class Form1
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cbKMZ = New System.Windows.Forms.CheckBox()
-        Me.cbKLM = New System.Windows.Forms.CheckBox()
         Me.cbPodziel = New System.Windows.Forms.CheckBox()
         Me.txtPodzY = New System.Windows.Forms.TextBox()
         Me.Label44 = New System.Windows.Forms.Label()
@@ -1262,7 +1261,6 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.cbKMZ)
-        Me.GroupBox1.Controls.Add(Me.cbKLM)
         Me.GroupBox1.Controls.Add(Me.cbPodziel)
         Me.GroupBox1.Controls.Add(Me.txtPodzY)
         Me.GroupBox1.Controls.Add(Me.Label44)
@@ -1280,24 +1278,12 @@ Partial Class Form1
         Me.cbKMZ.AutoSize = True
         Me.cbKMZ.Checked = True
         Me.cbKMZ.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbKMZ.Location = New System.Drawing.Point(38, 62)
+        Me.cbKMZ.Location = New System.Drawing.Point(21, 109)
         Me.cbKMZ.Name = "cbKMZ"
         Me.cbKMZ.Size = New System.Drawing.Size(80, 17)
         Me.cbKMZ.TabIndex = 222
         Me.cbKMZ.Text = "Batch KMZ"
         Me.cbKMZ.UseVisualStyleBackColor = True
-        '
-        'cbKLM
-        '
-        Me.cbKLM.AutoSize = True
-        Me.cbKLM.Checked = True
-        Me.cbKLM.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbKLM.Location = New System.Drawing.Point(22, 40)
-        Me.cbKLM.Name = "cbKLM"
-        Me.cbKLM.Size = New System.Drawing.Size(79, 17)
-        Me.cbKLM.TabIndex = 221
-        Me.cbKLM.Text = "Batch KLM"
-        Me.cbKLM.UseVisualStyleBackColor = True
         '
         'cbPodziel
         '
@@ -1313,7 +1299,7 @@ Partial Class Form1
         '
         'txtPodzY
         '
-        Me.txtPodzY.Location = New System.Drawing.Point(69, 110)
+        Me.txtPodzY.Location = New System.Drawing.Point(70, 71)
         Me.txtPodzY.Name = "txtPodzY"
         Me.txtPodzY.Size = New System.Drawing.Size(55, 20)
         Me.txtPodzY.TabIndex = 219
@@ -1323,7 +1309,7 @@ Partial Class Form1
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(17, 115)
+        Me.Label44.Location = New System.Drawing.Point(18, 75)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(51, 13)
         Me.Label44.TabIndex = 218
@@ -1331,7 +1317,7 @@ Partial Class Form1
         '
         'txtPodzX
         '
-        Me.txtPodzX.Location = New System.Drawing.Point(69, 82)
+        Me.txtPodzX.Location = New System.Drawing.Point(70, 36)
         Me.txtPodzX.Name = "txtPodzX"
         Me.txtPodzX.Size = New System.Drawing.Size(55, 20)
         Me.txtPodzX.TabIndex = 217
@@ -1341,7 +1327,7 @@ Partial Class Form1
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(17, 85)
+        Me.Label43.Location = New System.Drawing.Point(18, 39)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(51, 13)
         Me.Label43.TabIndex = 215
@@ -1510,7 +1496,6 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cbKMZ As System.Windows.Forms.CheckBox
-    Friend WithEvents cbKLM As System.Windows.Forms.CheckBox
     Friend WithEvents cbPodziel As System.Windows.Forms.CheckBox
     Friend WithEvents txtPodzY As System.Windows.Forms.TextBox
     Friend WithEvents Label44 As System.Windows.Forms.Label

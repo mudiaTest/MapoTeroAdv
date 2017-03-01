@@ -27,8 +27,8 @@ iloscProbPobrania
 przerwaMiedzyProbami
  5 
 x_start
-54.3731
+54.4461
 y_start
-18.724
+18.7289
 zoom_start
 10
