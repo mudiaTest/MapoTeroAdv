@@ -46,6 +46,7 @@ Module Module1
     Public pobierz As Boolean
     Public myPath As String                     'ścieżka tej aplikacji
     Public dstDir As String                     'ścieżka tej aplikacji
+    Public autoStartClose As Boolean = False
     Public folderWarstwa1 As String           'folder warstwy dolnej
     Public folderWarstwa2 As String          'folder warstwy górnej
     Public folderWynikowy As String            'folder złączonych warstw

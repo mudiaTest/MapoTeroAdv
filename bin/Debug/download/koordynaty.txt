@@ -1,2 +1,8 @@
-"C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTero_v3\bin\Debug\download\"
+"C:\Documents and Settings\Mudia.BIURO\Moje dokumenty\Visual Studio 2010\Projects\MapoTeroAdv\bin\Debug\download\"
 2000
+01_01
+http://mapy.geoportal.gov.pl:80/wss/service/img/guest/TOPO_SERIA/MapServer/WMSServer?request=GetMap&version=1.3.0&CRS=EPSG:2180&layers=Raster_50_1992,Raster_50_1965,Raster_50_1942&bbox=474824,724747,482824,732747&format=image/jpeg&styles=&width=2000&height=2000
+ 724747 
+ 474824 
+ 732747 
+ 482824 

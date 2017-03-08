@@ -88,8 +88,9 @@ Public Class Form1
         'przypisuje wartość zmiennej publicznej nrWarstwy
         nrWarstwy = 0
 
-
-        If (My.Application.CommandLineArgs.Count > 0) And (My.Application.CommandLineArgs.Item(0) <> "") Then
+        If (My.Application.CommandLineArgs.Count > 0) And (My.Application.CommandLineArgs.Item(0) = "-autoStartClose") Then
+            autoStartClose = True
+        ElseIf (My.Application.CommandLineArgs.Count > 0) And (My.Application.CommandLineArgs.Item(0) <> "") Then
             dstDir = My.Application.CommandLineArgs.Item(0) & "\"
         Else
             dstDir = ""
@@ -116,6 +117,10 @@ Public Class Form1
 
         form1loaded = True
 
+        If (autoStartClose) Then
+            Wykonaj()
+            Close()
+        End If
         If (My.Application.CommandLineArgs.Count > 0) And (My.Application.CommandLineArgs.Item(0) <> "") Then
             Wykonaj()
         End If
@@ -784,30 +789,22 @@ errorhandler:
     End Sub
 
     Private Sub SetTxtPodzEnDis()
-        txtPodzX.Enabled = cbKMZ.Checked And cbKMZ.Enabled
-        txtPodzY.Enabled = cbKMZ.Checked And cbKMZ.Enabled
     End Sub
 
     Private Sub SetCbKMZEnDis()
-        cbKMZ.Enabled = cbKLM.Checked And cbKLM.Enabled
-        SetTxtPodzEnDis()
     End Sub
 
     Private Sub SetCbKLMEnDis()
-        cbKLM.Enabled = cbPodziel.Checked
-        SetCbKMZEnDis()
     End Sub
 
-    Private Sub cbKMZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbKMZ.Click
+    Private Sub cbKMZ_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         SetTxtPodzEnDis()
     End Sub
 
-    Private Sub cbKLM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbKLM.Click
-        SetCbKMZEnDis()
+    Private Sub cbKLM_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 
-    Private Sub cbPodziel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbPodziel.Click
-        SetCbKLMEnDis()
+    Private Sub cbPodziel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
 End Class
 

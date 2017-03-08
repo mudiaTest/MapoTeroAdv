@@ -148,14 +148,6 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.txtPodzX = New System.Windows.Forms.TextBox()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.txtPodzY = New System.Windows.Forms.TextBox()
-        Me.cbPodziel = New System.Windows.Forms.CheckBox()
-        Me.cbKLM = New System.Windows.Forms.CheckBox()
-        Me.cbKMZ = New System.Windows.Forms.CheckBox()
         Me.GroupBox2.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -166,7 +158,6 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -215,7 +206,7 @@ Partial Class Form1
         Me.Label29.TabIndex = 216
         Me.Label29.Text = " Wybierz zbiór map (serwer WMS)"
         Me.ToolTip1.SetToolTip(Me.Label29, "Spis dostępnych serwerów WMS, których definicje znajdują się w plikach tekstowych" & _
-                " katalogu /warstwy/")
+        " katalogu /warstwy/")
         '
         'ListBox1
         '
@@ -254,7 +245,7 @@ Partial Class Form1
         Me.StatusStrip1.TabIndex = 237
         Me.StatusStrip1.Text = "StatusStrip1"
         Me.ToolTip1.SetToolTip(Me.StatusStrip1, "Informacje o aktualnym formacie plików rastrowych oraz lokalizacji katalogu ""down" & _
-                "load""")
+        "load""")
         '
         'ToolStripProgressBar1
         '
@@ -301,7 +292,7 @@ Partial Class Form1
         Me.SesjaToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
         Me.SesjaToolStripMenuItem.Text = "Sesja pobierania"
         Me.SesjaToolStripMenuItem.ToolTipText = "Wczytaj lub zapisz plik conf.txt, który przechowuje informacje m.in. o zasięgu po" & _
-            "bieranego obszaru"
+    "bieranego obszaru"
         '
         'ZapiszToolStripMenuItem
         '
@@ -400,7 +391,7 @@ Partial Class Form1
         Me.Label47.TabIndex = 221
         Me.Label47.Text = "="
         Me.ToolTip1.SetToolTip(Me.Label47, "Domyślna wartość zapewnia optymalną jakość pobranego obrazu. Im większy rozmiar p" & _
-                "ojedynczego piksela, tym gorsza jakość obrazu.")
+        "ojedynczego piksela, tym gorsza jakość obrazu.")
         '
         'Label46
         '
@@ -412,7 +403,7 @@ Partial Class Form1
         Me.Label46.TabIndex = 220
         Me.Label46.Text = "x"
         Me.ToolTip1.SetToolTip(Me.Label46, "Domyślna wartość zapewnia optymalną jakość pobranego obrazu. Im większy rozmiar p" & _
-                "ojedynczego piksela, tym gorsza jakość obrazu.")
+        "ojedynczego piksela, tym gorsza jakość obrazu.")
         '
         'TextBox13
         '
@@ -442,8 +433,8 @@ Partial Class Form1
         Me.Label1.TabIndex = 213
         Me.Label1.Text = "Rozmiar segmentu [pix]"
         Me.ToolTip1.SetToolTip(Me.Label1, "Rozmiar pojedyńczego segmentu - najmniejszej komórki siatki kwadtatów, na które z" & _
-                "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
-                "la Geoportalu2 wynosi 2048px")
+        "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
+        "la Geoportalu2 wynosi 2048px")
         '
         'Label2
         '
@@ -454,7 +445,7 @@ Partial Class Form1
         Me.Label2.TabIndex = 214
         Me.Label2.Text = "Rozmiar piksela [m/pix]"
         Me.ToolTip1.SetToolTip(Me.Label2, "Domyślna wartość jest optymalna. Im większy rozmiar piksela, tym gorsza jakość ob" & _
-                "razu, ale jednocześnie tym większy jego przestrzenny zasięg.")
+        "razu, ale jednocześnie tym większy jego przestrzenny zasięg.")
         '
         'TextBox10
         '
@@ -492,8 +483,8 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Wybrane warstwy oraz ich kolejność"
         Me.ToolTip1.SetToolTip(Me.GroupBox3, """Kanapka"" warstw. Pierwsza warstwa to bazowy podkład, który można przykryć kolejn" & _
-                "ymi warstwami o wyższym numerze, o ile mają one przeźroczyste tło, lub mają niep" & _
-                "ełne pokrycie.")
+        "ymi warstwami o wyższym numerze, o ile mają one przeźroczyste tło, lub mają niep" & _
+        "ełne pokrycie.")
         '
         'Button6
         '
@@ -604,7 +595,7 @@ Partial Class Form1
         Me.Label11.TabIndex = 218
         Me.Label11.Text = "1)"
         Me.ToolTip1.SetToolTip(Me.Label11, "Główna warstwa podkładowa, którą można przykryć kolejnymi warstwami (o ile mają p" & _
-                "rzeźroczyste tło lub nie pokrywają całkowicie podkładu)")
+        "rzeźroczyste tło lub nie pokrywają całkowicie podkładu)")
         '
         'Label13
         '
@@ -672,7 +663,7 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Wynikowy rozmiar siatki segmentów"
         Me.ToolTip1.SetToolTip(Me.GroupBox4, "Informacje o wynikowym rozmiarze siatki kwadratów na które zostanie podzielony ca" & _
-                "ły obszar pobieranej mapy")
+        "ły obszar pobieranej mapy")
         '
         'Label22
         '
@@ -813,8 +804,8 @@ Partial Class Form1
         Me.Label42.TabIndex = 215
         Me.Label42.Text = "Terenowy zasięg"
         Me.ToolTip1.SetToolTip(Me.Label42, "Rozmiar pojedyńczego segmentu - najmniejszej komórki siatki kwadtatów, na które z" & _
-                "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
-                "la Geoportalu2 wynosi 2048px")
+        "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
+        "la Geoportalu2 wynosi 2048px")
         '
         'Label7
         '
@@ -826,8 +817,8 @@ Partial Class Form1
         Me.Label7.TabIndex = 316
         Me.Label7.Text = "jednego segmentu [km]"
         Me.ToolTip1.SetToolTip(Me.Label7, "Rozmiar pojedyńczego segmentu - najmniejszej komórki siatki kwadtatów, na które z" & _
-                "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
-                "la Geoportalu2 wynosi 2048px")
+        "ostanie podzielony pobierany obszar mapy.  Uwaga - maksymalna rozmiar segmentu d" & _
+        "la Geoportalu2 wynosi 2048px")
         '
         'Label8
         '
@@ -838,7 +829,7 @@ Partial Class Form1
         Me.Label8.TabIndex = 317
         Me.Label8.Text = "Rozmiar pojedynczego segmentu:"
         Me.ToolTip1.SetToolTip(Me.Label8, "Domyślna wartość jest optymalna. Im większy rozmiar piksela, tym gorsza jakość ob" & _
-                "razu, ale jednocześnie tym większy jego przestrzenny zasięg.")
+        "razu, ale jednocześnie tym większy jego przestrzenny zasięg.")
         '
         'Button4
         '
@@ -851,7 +842,7 @@ Partial Class Form1
         Me.Button4.Size = New System.Drawing.Size(30, 30)
         Me.Button4.TabIndex = 306
         Me.ToolTip1.SetToolTip(Me.Button4, "wyświetl rzeczywisty zasięg pobieranego obszaru, uwzględniający rozmiar siatki se" & _
-                "gmentów")
+        "gmentów")
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button8
@@ -1250,7 +1241,6 @@ Partial Class Form1
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.GroupBox1)
         Me.Panel3.Controls.Add(Me.GroupBox5)
         Me.Panel3.Controls.Add(Me.GroupBox4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -1258,94 +1248,6 @@ Partial Class Form1
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(775, 148)
         Me.Panel3.TabIndex = 308
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.cbKMZ)
-        Me.GroupBox1.Controls.Add(Me.cbKLM)
-        Me.GroupBox1.Controls.Add(Me.cbPodziel)
-        Me.GroupBox1.Controls.Add(Me.txtPodzY)
-        Me.GroupBox1.Controls.Add(Me.Label44)
-        Me.GroupBox1.Controls.Add(Me.txtPodzX)
-        Me.GroupBox1.Controls.Add(Me.Label43)
-        Me.GroupBox1.Location = New System.Drawing.Point(638, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(129, 141)
-        Me.GroupBox1.TabIndex = 304
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Podział KML"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(14, 85)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(51, 13)
-        Me.Label43.TabIndex = 215
-        Me.Label43.Text = "Podział x"
-        '
-        'txtPodzX
-        '
-        Me.txtPodzX.Location = New System.Drawing.Point(69, 82)
-        Me.txtPodzX.Name = "txtPodzX"
-        Me.txtPodzX.Size = New System.Drawing.Size(55, 20)
-        Me.txtPodzX.TabIndex = 217
-        Me.txtPodzX.Text = "10000"
-        Me.txtPodzX.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(17, 115)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(51, 13)
-        Me.Label44.TabIndex = 218
-        Me.Label44.Text = "Podział y"
-        '
-        'txtPodzY
-        '
-        Me.txtPodzY.Location = New System.Drawing.Point(69, 110)
-        Me.txtPodzY.Name = "txtPodzY"
-        Me.txtPodzY.Size = New System.Drawing.Size(55, 20)
-        Me.txtPodzY.TabIndex = 219
-        Me.txtPodzY.Text = "10000"
-        Me.txtPodzY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'cbPodziel
-        '
-        Me.cbPodziel.AutoSize = True
-        Me.cbPodziel.Checked = True
-        Me.cbPodziel.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbPodziel.Location = New System.Drawing.Point(8, 17)
-        Me.cbPodziel.Name = "cbPodziel"
-        Me.cbPodziel.Size = New System.Drawing.Size(60, 17)
-        Me.cbPodziel.TabIndex = 220
-        Me.cbPodziel.Text = "Podziel"
-        Me.cbPodziel.UseVisualStyleBackColor = True
-        '
-        'cbKLM
-        '
-        Me.cbKLM.AutoSize = True
-        Me.cbKLM.Checked = True
-        Me.cbKLM.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbKLM.Location = New System.Drawing.Point(22, 40)
-        Me.cbKLM.Name = "cbKLM"
-        Me.cbKLM.Size = New System.Drawing.Size(79, 17)
-        Me.cbKLM.TabIndex = 221
-        Me.cbKLM.Text = "Batch KLM"
-        Me.cbKLM.UseVisualStyleBackColor = True
-        '
-        'cbKMZ
-        '
-        Me.cbKMZ.AutoSize = True
-        Me.cbKMZ.Checked = True
-        Me.cbKMZ.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbKMZ.Location = New System.Drawing.Point(38, 62)
-        Me.cbKMZ.Name = "cbKMZ"
-        Me.cbKMZ.Size = New System.Drawing.Size(80, 17)
-        Me.cbKMZ.TabIndex = 222
-        Me.cbKMZ.Text = "Batch KMZ"
-        Me.cbKMZ.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1396,8 +1298,6 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1508,12 +1408,4 @@ Partial Class Form1
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label8 As Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents cbKMZ As System.Windows.Forms.CheckBox
-    Friend WithEvents cbKLM As System.Windows.Forms.CheckBox
-    Friend WithEvents cbPodziel As System.Windows.Forms.CheckBox
-    Friend WithEvents txtPodzY As System.Windows.Forms.TextBox
-    Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents txtPodzX As System.Windows.Forms.TextBox
-    Friend WithEvents Label43 As System.Windows.Forms.Label
 End Class
